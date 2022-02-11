@@ -41,7 +41,7 @@
 					<tr><td><code>diw</code> - Delete inside word</td></tr>
 					<tr><td><code>daw</code> - Delete word and trailing space</td></tr>
 					<tr><td><code>di"/di'/di)/di}</code> - Delete inside double quotes, single quotes, parenthese, or curly braces</td></tr>
-					<tr><td><code>dd</code> - delete a line (and copy it to system register)</td></tr>
+					<tr><td><code>dd/#dd</code> - delete a line (and copy it to system register), delete # lines</td></tr>
 					<tr><td><code>d$/D</code> - delete from cursor up to end of line</td></tr>
 					<tr><td><code>:5,25d</code> - delete lines 5-25
 					<tr><td><code>:.m 12</code> - move current line after line 12</td></tr>
@@ -61,13 +61,6 @@
 					<tr><td><code>gv</code> - reselect the last visual selection</td></tr>
 					<tr><td><h1>Moving Visually Selected Text</h1></td></tr>
 					<tr><td><code>:le 10</code> - takes the visually selected text and adds 10 spaces to the left of this selected text starting from beginning of line</td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
-					<tr><td><code></code> - </td></tr>
 					<tr><td><code></code> - </td></tr>
 					<tr><td><code></code> - </td></tr>
 			 	
@@ -113,12 +106,15 @@
 				<table>
 			 		<tr><td><h1>Copy, Cut and Paste / Registers</h1></td></tr>
 					<tr><td><code>yy/Y</code> - Copy/Yank current line</td></tr>
+					<tr><td><code>2yy</code> - Copy/Yank current line and line below it</td></tr>
+					<tr><td><code>y$</code> - Copy/yank from current cursor to end of line</td></tr>
+
 					<tr><td><code>p/P</code> - paste before cursor and after cursor</td></tr>
 					<tr><td><code>"ap</code> - paste from register <code>a</code></td></tr>
 					<tr><td><code>"+p</code> - paste from the system clipboard</td></tr>
 					<tr><td><code>".p</code> - paste from last inserted text</td></tr>
 					<tr><td><code>"0-9p</code> - paste from delete history</td></tr>
-					<tr><td><code>:reg</code> - list registers and their contents</td></tr>
+					<tr><td><code>:reg[isters]</code> - list registers and their contents</td></tr>
 					<tr><td><code>]p</code> - paste line with right indent</td></tr>
 					<tr><td><code></code></td></tr>
 					<tr><td><code></code></td></tr>
@@ -134,6 +130,12 @@
 					<tr><td><code>zf</code> - create fold at cursor position</td></tr>
 					<tr><td><code>zd</code> - delete fold under cursor</td></tr>
 					<tr><td><code>za</code> - toggle fold at cursor location</td></tr>
+					
+					<tr><td><h1>Tabs</h1></td></tr>
+					<tr><td><code></code></td></tr>
+					<tr><td><code></code></td></tr>
+					<tr><td><code></code></td></tr>
+
 				</table>
 			</div> <!-- #third column -->
 
