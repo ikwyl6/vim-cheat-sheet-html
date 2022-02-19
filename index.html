@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<div id="container">
-			<div>
+			 <div> <!-- # start of first column -->
 			 	<table>
 				 	<tr><h1>Editing</h1></tr>
 					<tr><td><code>i/I</code> - insert before cursor or beginning of line</td></tr>
@@ -65,9 +65,10 @@
 					<tr><td><code></code> - </td></tr>
 			 	
 				</table>
-			</div> <!-- #first column -->
+			</div> <!-- #end of first column -->
 
-			<div>
+			<div> <!-- # Start of second column -->
+				 <!-- template for rows: <tr><td><code></code> - </td></tr> -->
 				<table>
 				 	<tr><h1>Moving Around</h1></tr>
 				 	<tr><td><code>h</code> - </td></tr>
@@ -83,7 +84,6 @@
 				 	<tr><td><code>#|</code> - Move to # column in line</td></tr>
 				 	<tr><td><code>[Enter]/+</code> - Move to the next non-blank character on line</td></tr>
 				 	<tr><td><code></code> - </td></tr>
-
 					<tr><td><code>:#</code> - move to line # where # is a number.</td></tr>
 					<tr><td><code>/[chars]</code> - search for a string below cursor</td></tr>
 					<tr><td><code>?[chars]</code> - search for a string above cursor</td></tr>
@@ -94,21 +94,20 @@
 					<tr><td><code>,/;</code> - using f/t commands above, repeat in the command direction or previous direction</td></tr>
 					<tr><td><code>zt/zz/zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
 					<tr><td><code></code> - </td></tr>
-					<tr><h1>Repeating Commands</h1></tr>
+					<tr><td><h1>Repeating Commands</h1></td></tr>
 					<tr><td><code>.</code> - Repeat last command performed</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
 					<tr><td><code></code> - </td></tr>
 					<tr><td><code></code> - </td></tr>
 				</table>
-			</div> <!-- #second column -->
+			</div> <!-- # end of second column -->
 
-			<div>
+			<div> <!-- # start of third column -->
 				<table>
 			 		<tr><td><h1>Copy, Cut and Paste / Registers</h1></td></tr>
 					<tr><td><code>yy/Y</code> - Copy/Yank current line</td></tr>
 					<tr><td><code>2yy</code> - Copy/Yank current line and line below it</td></tr>
 					<tr><td><code>y$</code> - Copy/yank from current cursor to end of line</td></tr>
-
 					<tr><td><code>p/P</code> - paste before cursor and after cursor</td></tr>
 					<tr><td><code>"ap</code> - paste from register <code>a</code></td></tr>
 					<tr><td><code>"+p</code> - paste from the system clipboard</td></tr>
@@ -116,10 +115,6 @@
 					<tr><td><code>"0-9p</code> - paste from delete history</td></tr>
 					<tr><td><code>:reg[isters]</code> - list registers and their contents</td></tr>
 					<tr><td><code>]p</code> - paste line with right indent</td></tr>
-					<tr><td><code></code></td></tr>
-					<tr><td><code></code></td></tr>
-					<tr><td><code></code></td></tr>
-					<tr><td><code></code></td></tr>
 					<tr><td><h1>Split Windows</h1></td></tr>
 					<tr><td><code>:sp[lit] [file]</code> - split window horizontally opening [file]</td></tr>
 					<tr><td><code>:vs[plit] [file]</code> - split window vertically opening [file]</td></tr>
@@ -130,12 +125,10 @@
 					<tr><td><code>zf</code> - create fold at cursor position</td></tr>
 					<tr><td><code>zd</code> - delete fold under cursor</td></tr>
 					<tr><td><code>za</code> - toggle fold at cursor location</td></tr>
-					
 					<tr><td><h1>Tabs</h1></td></tr>
 					<tr><td><code></code></td></tr>
 					<tr><td><code></code></td></tr>
 					<tr><td><code></code></td></tr>
-
 				</table>
 			</div> <!-- #third column -->
 
