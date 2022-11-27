@@ -51,6 +51,7 @@
 					<tr><td><code>u</code> - undo last change</td></tr>
 					<tr><td><code>:undolist</code> - list your possible undo changes using <code>u</code></td></tr>
 					<tr><td><code>J</code> - join current and below line with space in between</td></tr>
+					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
 					<tr><td><code>gJ</code> - join current and below line with no space between</td></tr>
 					<tr><td><h1>Visual Mode</h1></td></tr>
 					<tr><td><code>v</code> - enter visual mode</td></tr>
@@ -98,7 +99,15 @@
 					<tr><td><code>.</code> - Repeat last command performed</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
 					<tr><td><code></code> - </td></tr>
+					<tr><td><h1>Searching for text</h1></td></tr>
+					<tr><td><code>:/search/d</code> - search and delete the text that was found</td></tr>
+					<tr><td><code>:/search/y</code> - search and yank the text that was found</td></tr>
+					<tr><td><code>:/search1/,/search2/d</code> - search and delete lines with multiple patterns</td></tr>
+					<tr><td><code>:%s/target/=@0/g</code> - replace target with what is yanked</td></tr>
+					<tr><td><code>:g/href/d</code> - delete all lines with pattern</td></tr>
+					<tr><td><code>:v/pattern/d</code> - delete all lines that do not match pattern</td></tr>
 					<tr><td><code></code> - </td></tr>
+
 				</table>
 			</div> <!-- # end of second column -->
 
@@ -108,6 +117,9 @@
 					<tr><td><code>yy/Y</code> - Copy/Yank current line</td></tr>
 					<tr><td><code>2yy</code> - Copy/Yank current line and line below it</td></tr>
 					<tr><td><code>y$</code> - Copy/yank from current cursor to end of line</td></tr>
+					<tr><td><code>:#y</code> - copy/yank line number #</td></tr>
+					<tr><td><code></code> - </td></tr>
+
 					<tr><td><code>p/P</code> - paste before cursor and after cursor</td></tr>
 					<tr><td><code>"ap</code> - paste from register <code>a</code></td></tr>
 					<tr><td><code>"+p</code> - paste from the system clipboard</td></tr>
@@ -123,8 +135,26 @@
 					<tr><td><code></code></td></tr>
 					<tr><td><h1>Folds</h1></td></tr>
 					<tr><td><code>zf</code> - create fold at cursor position</td></tr>
+					<tr><td><code>zf{motion} {Visual}zf</code> - create a fold.
 					<tr><td><code>zd</code> - delete fold under cursor</td></tr>
 					<tr><td><code>za</code> - toggle fold at cursor location</td></tr>
+					<tr><td><code>zF</code> - create a fold for [count] lines
+					<tr><td><code>:{range}fo[ld]</code> -	create a fold for {range}
+					<tr><td><code>zd</code> -	delete one fold at the cursor.
+					<tr><td><code>zD</code> -	delete folds recursively
+					<tr><td><code>zE</code> -	eliminate all folds in the window.
+					<tr><td><code>zo/zO</code> - open fold recursively or not
+					<tr><td><code>zc/zC</code> - close one fold under the cursor recursively or not.
+					<tr><td><code>za/zA</code> - open or close recursively or not
+					<tr><td><code>zv</code> -	view cursor line
+					<tr><td><code>zm/zM</code> - fold more: Subtract one from 'foldlevel'.
+					<tr><td><code>zr/zR</code> - reduce folding: Add one to 'foldlevel'.
+					<tr><td><code>:{range}foldo[pen][!]</code> - open folds in {range}. [!] all folds are
+					<tr><td><code>:{range}foldc[lose][!]</code> -	close folds in {range}. [!] all folds
+					<tr><td><code>zn/zN</code> - all folds will be open.
+					<tr><td><code>zi</code> -	invert 'foldenable'.
+					<tr><td><code>[z/]z</code> - move to the start or the end of the current open fold.
+					<tr><td><code>zj/zk</code> - move downwards or upwards
 					<tr><td><h1>Tabs</h1></td></tr>
 					<tr><td><code></code></td></tr>
 					<tr><td><code></code></td></tr>
