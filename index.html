@@ -28,6 +28,15 @@
 			 	<table>
 					<tr><td><h1>General</h1></td></tr>
 					<tr><td><code>[count][command][motion]</code> - General formation of commands</td></tr>
+
+					<tr><td><h1>Text Objects</h1></td></tr>
+					<tr><td><code>iw</code> - inside a word</td></tr>
+					<tr><td><code>aw</code> - around a word</td></tr>
+					<tr><td><code>ip</code> - inside a paragraph</td></tr>
+					<tr><td><code>aw</code> - around a paragraph</td></tr>
+					<tr><td><code>i{</code> - inside a {} block or [] () '' "" ``</td></tr>
+					<tr><td><code>a{</code> - around a {} block or [] () '' "" ``</td></tr>
+
 					<tr><td><h1>Files</h1></td></tr>
 					<tr><td><code>:e file</code> - edit file</td></tr>
 					<tr><td><code>:e!</code> - re-edit, dischard changes</td></tr>
@@ -38,14 +47,16 @@
 					<tr><td><code>:w! file</code> - overwrite file</td></tr>
 					<tr><td><code>:w >>file</code> - append file (current file if no name given)</td></tr>
 					<tr><td><code>:23,45w snippet.txt</code> - Write the contents of the lines numbered 23 through 45 to a new file named snippet.txt
-					<tr><td><code>:x / ZZ</code> - Save (if there are changes) and quit
 					<tr><td><code>:r file</code> - read file after line</td></tr>
 					<tr><td><code>:r !program</code> - read program output</td></tr>
 					<tr><td><code>:n</code> - edit next file in buffer</td></tr>
 					<tr><td><code>:p</code> - edit previous file in buffer</td></tr>
 					<tr><td><code>:f</code> or <code>^G</code> - show file name, total number of lines and percentage location within file</td></tr>
+					<tr><td><code>:q</code> or </code>:q!</code> - quit or quit without saving</td></tr>
+					<tr><td><code>:x</code> or <code>ZZ</code> - Save (if there are changes) and quit
+					<tr><td><code>ZQ</code> - Quit without checking for changes</td></tr>
+					<tr><td><code>ZZ</code> - Save current file and quit</td></tr>
 
-					<tr><td><code>:q / :q!</code> - quit / quit without saving</td></tr>
 					<tr><td><h1>Editing</h1></td></tr>
 					<tr><td><code>i</code> or <code>I</code> - insert before cursor or before the first non-blank in the line</td></tr>
 					<tr><td><code>a</code> or <code>A</code> - append text after cursor or end of line</td></tr>
@@ -59,6 +70,7 @@
 					<tr><td><code>ciw</code> - change word under cursor</td></tr>
 					<tr><td><code>caw</code> - change around word (including trailing space)</td></tr>
 					<tr><td><code>cw</code> - change word under cursor</td></tr>
+					<tr><td><code>ci"</code> - change inside ""</td></tr>
 					<tr><td><code>d</code> - delete</td></tr>
 					<tr><td><code>dw</code> or <code>d#w</code> - delete word or delete # of words</td></tr>
 					<tr><td><code>diw</code> - Delete inside word</td></tr>
@@ -76,6 +88,7 @@
 					<tr><td><code>J</code> - join current and below line with space in between</td></tr>
 					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
 					<tr><td><code>gJ</code> - join current and below line with no space between</td></tr>
+
 					<tr><td><h1>Visual Mode</h1></td></tr>
 					<tr><td><code>v</code> - enter visual mode</td></tr>
 					<tr><td><code>V</code> - enter visual mode highlighting the current line</td></tr>
@@ -188,9 +201,6 @@
 					<tr><td><code>:tab help tabs</code> - create new help window about tabs in a new tab</td></tr>
 					<tr><td><code>Ctrl-Shift-[Up/Dn]</code>Rotate between tabs</td></tr>
 					<tr><td><code>Ctrl-w T</code>Move window to a new tab</td></tr>
-					<tr><td><code></code></td></tr>
-					<tr><td><code></code></td></tr>
-					<tr><td><code></code></td></tr>
 				</table>
 			</div> <!-- #third column -->
 
