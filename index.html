@@ -3,16 +3,16 @@
 	<head>
 		 <title>ikwyl6 vim cheat sheet</title>
 		 <style>
-			body { font-family: Arial; font-size: 12px; }
+			body { font-family: Arial; font-size: 14px; }
 			table { /*border:1px solid #999;*/ border-collapse: collapse; }
 			tr { /*border-bottom: 1px solid #999;*/ }
 			td { padding-top: 8px; padding-bottom: 8px; }
 			h1 { font-size: }
-		  code { background: #ddd; border-radius:0; padding: 4px; font-weight: bold }
+		  code { background: #eaeaea; /*#ddd;*/ border-radius:0; padding: 4px; font-weight: bold }
 			footer { font-size: 12px; font-color: #ddd }
 			/* div containers below */
 			#container {
-				width: 1000px;
+				width: 1200px;
 				margin: 0 auto; /* center the div in center of page */
 				display: grid;
 				grid-gap: 10px;  /* Simply adjust this value !*/
@@ -26,7 +26,9 @@
 		<div id="container">
 			 <div> <!-- # start of first column -->
 			 	<table>
-					<tr><h1>Files</h1></tr>
+					<tr><td><h1>General</h1></td></tr>
+					<tr><td><code>[count][command][motion]</code> - General formation of commands</td></tr>
+					<tr><td><h1>Files</h1></td></tr>
 					<tr><td><code>:e file</code> - edit file</td></tr>
 					<tr><td><code>:e!</code> - re-edit, dischard changes</td></tr>
 					<tr><td><code>:e + file</code> - edit file, starting at end of file</td></tr>
@@ -41,35 +43,35 @@
 					<tr><td><code>:r !program</code> - read program output</td></tr>
 					<tr><td><code>:n</code> - edit next file in buffer</td></tr>
 					<tr><td><code>:p</code> - edit previous file in buffer</td></tr>
-					<tr><td><code>:f / ^G</code> - show file name, total number of lines and percentage location within file</td></tr>
+					<tr><td><code>:f</code> or <code>^G</code> - show file name, total number of lines and percentage location within file</td></tr>
 
 					<tr><td><code>:q / :q!</code> - quit / quit without saving</td></tr>
 					<tr><td><h1>Editing</h1></td></tr>
-					<tr><td><code>i/I</code> - insert before cursor or before the first non-blank in the line</td></tr>
-					<tr><td><code>a/A</code> - append text after cursor or end of line</td></tr>
-					<tr><td><code>o/O</code> - enter insert mode but insert line after current one or before current line</td></tr>
+					<tr><td><code>i</code> or <code>I</code> - insert before cursor or before the first non-blank in the line</td></tr>
+					<tr><td><code>a</code> or <code>A</code> - append text after cursor or end of line</td></tr>
+					<tr><td><code>o</code> or <code>O</code> - enter insert mode but insert line after current one or before current line</td></tr>
 					<tr><td><code>rx</code> - replace single character with letter x</td></tr>
 					<tr><td><code>R</code> - enter replace mode</td></tr>
 					<tr><td><code>s</code> - delete character under cursor and go into insert mode</td></tr>
-					<tr><td><code>x/X</code> - delete character under cursor or before cursor</td></tr>
-					<tr><td><code>c/#c</code> - change a character or change three characters <code>3c</code></td></tr>
-					<tr><td><code>cc/S/C</code> - change/replace whole line <code>cc/S</code> or change/replace to end of line<code>C</code></td></tr>
+					<tr><td><code>x</code> or <code>X</code> - delete character under cursor or before cursor</td></tr>
+					<tr><td><code>c</code> or <code>#c</code> - change a character or change three characters <code>3c</code></td></tr>
+					<tr><td><code>cc</code> or <code>S</code> or <code>C</code> - change/replace whole line <code>cc/S</code> or change/replace to end of line<code>C</code></td></tr>
 					<tr><td><code>ciw</code> - change word under cursor</td></tr>
 					<tr><td><code>caw</code> - change around word (including trailing space)</td></tr>
 					<tr><td><code>cw</code> - change word under cursor</td></tr>
 					<tr><td><code>d</code> - delete</td></tr>
-					<tr><td><code>dw/d#w</code> - delete word or delete # of words</td></tr>
+					<tr><td><code>dw</code> or <code>d#w</code> - delete word or delete # of words</td></tr>
 					<tr><td><code>diw</code> - Delete inside word</td></tr>
 					<tr><td><code>daw</code> - Delete word and trailing space</td></tr>
-					<tr><td><code>di"/di'/di)/di}</code> - Delete inside double quotes, single quotes, parenthese, or curly braces</td></tr>
-					<tr><td><code>dd/#dd</code> - delete a line (and copy it to system register), delete # lines</td></tr>
-					<tr><td><code>d$/D</code> - delete from cursor up to end of line</td></tr>
+					<tr><td><code>di"</code> or <code>di'</code> or <code>di)</code> or <code>di}</code> - Delete inside double quotes, single quotes, parenthese, or curly braces</td></tr>
+					<tr><td><code>dd</code> or <code>#dd</code> - delete a line (and copy it to system register), delete # lines</td></tr>
+					<tr><td><code>d$</code> or <code>D</code> - delete from cursor up to end of line</td></tr>
 					<tr><td><code>:5,25d</code> - delete lines 5-25
 					<tr><td><code>:.m 12</code> - move current line after line 12</td></tr>
 					<tr><td><code>:5,7m 21</code> - move lines 5-7 after line 21</td></tr>
 					<tr><td><code>[#]r[char]</code> - replace number of characters [#] with character [char]. <code>3rf</code></td></tr>
-					<tr><td><code>ddp/ddkP</code> - move line down or move line up</td></tr>
-					<tr><td><code>u/U</code> - undo last change or restore current line</td></tr>
+					<tr><td><code>ddp</code> or <code>ddkP</code> - move line down or move line up</td></tr>
+					<tr><td><code>u</code> or <code>U</code> - undo last change or restore current line</td></tr>
 					<tr><td><code>:undolist</code> - list your possible undo changes using <code>u</code></td></tr>
 					<tr><td><code>J</code> - join current and below line with space in between</td></tr>
 					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
@@ -83,7 +85,6 @@
 					<tr><td><code>gv</code> - reselect the last visual selection</td></tr>
 					<tr><td><h1>Moving Visually Selected Text</h1></td></tr>
 					<tr><td><code>:le 10</code> - takes the visually selected text and adds 10 spaces to the left of this selected text starting from beginning of line</td></tr>
-					<tr><td><code></code> - </td></tr>
 				</table>
 			</div> <!-- #end of first column -->
 
@@ -95,12 +96,12 @@
 				 	<tr><td><code>j</code> - Move one line down</td></tr>
 				 	<tr><td><code>k</code> - Move one line up</td></tr>
 				 	<tr><td><code>l</code> - Move one character to the right</td></tr>
-				 	<tr><td><code>H/M/L</code> - Move to top <code>H</code>, middle <code>M</code> or bottom of screen <code>L</code></td></tr>
-				 	<tr><td><code>w/W</code> - jump ahead to start of next word or space-separated word</td></tr>
-				 	<tr><td><code>e/E</code> - jump ahead to end of next word or space-separated word</td></tr>
-				 	<tr><td><code>b/B</code> - jump behind to start of previous word</td></tr>
-				 	<tr><td><code>gg/G/#G</code> - Jump to 1st line of file, last line of file, or #th-line of file</td></tr>
-					<tr><td><code>g; / g,</code> - Move back to previously / newer changed line (older/newer position in change list). Similar command as CTRL-O and CTRL-I (jump list)</td></tr>
+				 	<tr><td><code>H</code> or <code>M</code> or <code>L</code> - Move to top <code>H</code>, middle <code>M</code> or bottom of screen <code>L</code></td></tr>
+					<tr><td><code>w</code> or <code>W</code> - jump ahead to start of next <a href="https://vimhelp.org/motion.txt.html#word">word</a> or space-separated <a href="https://vimhelp.org/motion.txt.html#word">Word</a></td></tr>
+				 	<tr><td><code>e</code> or <code>E</code> - jump ahead to end of next word or space-separated word</td></tr>
+				 	<tr><td><code>b</code> or <code>B</code> - jump behind to start of previous word</td></tr>
+				 	<tr><td><code>gg</code> or <code>G</code> or <code>#G</code> - Jump to 1st line of file, last line of file, or #th-line of file</td></tr>
+					<tr><td><code>g;</code> or <code>g,</code> - Move back to previously / newer changed line (older/newer position in change list). Similar command as CTRL-O and CTRL-I (jump list)</td></tr>
 					<tr><td><code>``</code> - Jump between the last two changed positions in change list</td></tr>
 					<tr><td><code>#%</code> - Move to the # % of file. <code>25%</code> would move to the 25% percent of file</td></tr>
 				 	<tr><td><code>#|</code> - Move to # column in line</td></tr>
@@ -108,15 +109,14 @@
 					<tr><td><code>-</code> - move to the previous line at the first non-blank character</td></tr>
 					<tr><td><code>:#</code> - move to line # where # is a number.</td></tr>
 					<tr><td><code>%</code> - find matching ( ) or {</td></tr>
-
 					<tr><td><code>/[chars]</code> - search for a string below cursor</td></tr>
 					<tr><td><code>?[chars]</code> - search for a string above cursor</td></tr>
-					<tr><td><code>n/N</code> - search for next or previous search occurence using / or ?. Or keep hitting <code>/</code> or <code>?</code> and [Enter] will do same thing</td></tr>
-					<tr><td><code>( ) { }</code> - move to beginning or end of sentence or beginning/end of paragraph (or next blank line)</td></tr>
-					<tr><td><code>0/^/$/g_</code> - go to beginning of line, start of first non-blank character in line, end of line, or last non-blank character in line</td></tr>
-					<tr><td><code>fz/Fz/tz/Tz</code> - jump to next <code>f</code> or previous <code>F</code> character 'z', jump to next <code>t</code> or previous <code>T</code> character 'z' but behind one character</td></tr>
-					<tr><td><code>,/;</code> - using <code>f</code> or <code>t</code> commands above, repeat in the command direction or previous direction</td></tr>
-					<tr><td><code>zt/zz/zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
+					<tr><td><code>n</code> or <code>N</code> - search for next or previous search occurence using / or ?. Or keep hitting <code>/</code> or <code>?</code> and [Enter] will do same thing</td></tr>
+					<tr><td><code>(</code> or <code>)</code> or <code>{</code> or <code>}</code> - move to beginning or end of sentence or beginning/end of paragraph (or next blank line)</td></tr>
+					<tr><td><code>0</code> or <code>^</code> or <code>$</code> or <code>g_</code> - go to beginning of line, start of first non-blank character in line (or underscore _), end of line, or last non-blank character in line</td></tr>
+					<tr><td><code>f{char}</code> or <code>F{char}</code> or <code>t{char}</code> or <code>T{char}</code> - jump to next <code>f</code> or previous <code>F</code> character,  jump to next <code>t</code> or previous <code>T</code> character but behind one character</td></tr>
+					<tr><td><code>,</code> or <code>;</code> - using <code>f</code> or <code>t</code> commands above, repeat in the command direction or previous direction</td></tr>
+					<tr><td><code>zt</code> <code>zz</code> <code>zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
 					<tr><td><h1>Repeating Commands</h1></td></tr>
 					<tr><td><code>.</code> - Repeat last command performed</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
@@ -125,7 +125,7 @@
 					<tr><td><code>:/search/y</code> - search and yank the text that was found</td></tr>
 					<tr><td><code>:/search1/,/search2/d</code> - search and delete lines with multiple patterns</td></tr>
 					<tr><td><code>:%s/target/=@0/g</code> - replace target with what is yanked</td></tr>
-					<tr><td><code>:g/href/d</code> - delete all lines with pattern</td></tr>
+					<tr><td><code>:g/pattern/d</code> - delete all lines with pattern</td></tr>
 					<tr><td><code>:v/pattern/d</code> - delete all lines that do not match pattern</td></tr>
 					<tr><td><code></code> - </td></tr>
 
@@ -153,11 +153,13 @@
 					<tr><td><code>:reg[isters]</code> - list registers and their contents</td></tr>
 					<tr><td><code>]p</code> - paste line with right indent</td></tr>
 					<tr><td><code>:.!program</code> - replace line with program output
+				
 					<tr><td><h1>Split Windows</h1></td></tr>
 					<tr><td><code>:sp[lit] [file]</code> - split window horizontally opening [file]</td></tr>
 					<tr><td><code>:vs[plit] [file]</code> - split window vertically opening [file]</td></tr>
 					<tr><td><code>Ctrl</code>+<code>ww</code> - switch to other split window</td></tr>
 					<tr><td><code>Ctrl</code>+<code>w[dir]</code> - move to split window using direction ([dir] can be hjkl or arrow keys)</td></tr>
+
 					<tr><td><h1>Folds</h1></td></tr>
 					<tr><td><code>zf</code> - create fold at cursor position</td></tr>
 					<tr><td><code>zf{motion} {Visual}zf</code> - create a fold.
@@ -179,9 +181,9 @@
 					<tr><td><code>zi</code> -	invert 'foldenable'.
 					<tr><td><code>[z/]z</code> - move to the start or the end of the current open fold.
 					<tr><td><code>zj/zk</code> - move downwards or upwards
+
 					<tr><td><h1>Tabs</h1></td></tr>
 					<tr><td><code>:tabnew</code> - Create a new tab</td></tr>
-
 					<tr><td><code>:tabc[lose]</code>- Close current tab</td></tr>
 					<tr><td><code>:tab help tabs</code> - create new help window about tabs in a new tab</td></tr>
 					<tr><td><code>Ctrl-Shift-[Up/Dn]</code>Rotate between tabs</td></tr>
