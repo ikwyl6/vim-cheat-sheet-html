@@ -55,7 +55,6 @@
 					<tr><td><code>:q</code> or </code>:q!</code> - quit or quit without saving</td></tr>
 					<tr><td><code>:x</code> or <code>ZZ</code> - Save (if there are changes) and quit
 					<tr><td><code>ZQ</code> - Quit without checking for changes</td></tr>
-					<tr><td><code>ZZ</code> - Save current file and quit</td></tr>
 
 					<tr><td><h1>Editing</h1></td></tr>
 					<tr><td><code>i</code> or <code>I</code> - insert before cursor or before the first non-blank in the line</td></tr>
@@ -88,16 +87,6 @@
 					<tr><td><code>J</code> - join current and below line with space in between</td></tr>
 					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
 					<tr><td><code>gJ</code> - join current and below line with no space between</td></tr>
-
-					<tr><td><h1>Visual Mode</h1></td></tr>
-					<tr><td><code>v</code> - enter visual mode</td></tr>
-					<tr><td><code>V</code> - enter visual mode highlighting the current line</td></tr>
-					<tr><td><code>viw</code> - visually select word without spaces</td></tr>
-					<tr><td><code>vaw</code> - visually select work with trailing space</td></tr>
-					<tr><td><code>vi[</code> - visully select inside next occurence of [</td></tr>
-					<tr><td><code>gv</code> - reselect the last visual selection</td></tr>
-					<tr><td><h1>Moving Visually Selected Text</h1></td></tr>
-					<tr><td><code>:le 10</code> - takes the visually selected text and adds 10 spaces to the left of this selected text starting from beginning of line</td></tr>
 				</table>
 			</div> <!-- #end of first column -->
 
@@ -130,9 +119,11 @@
 					<tr><td><code>f{char}</code> or <code>F{char}</code> or <code>t{char}</code> or <code>T{char}</code> - jump to next <code>f</code> or previous <code>F</code> character,  jump to next <code>t</code> or previous <code>T</code> character but behind one character</td></tr>
 					<tr><td><code>,</code> or <code>;</code> - using <code>f</code> or <code>t</code> commands above, repeat in the command direction or previous direction</td></tr>
 					<tr><td><code>zt</code> <code>zz</code> <code>zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
+
 					<tr><td><h1>Repeating Commands</h1></td></tr>
 					<tr><td><code>.</code> - Repeat last command performed</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
+
 					<tr><td><h1>Searching for text</h1></td></tr>
 					<tr><td><code>:/search/d</code> - search and delete the text that was found</td></tr>
 					<tr><td><code>:/search/y</code> - search and yank the text that was found</td></tr>
@@ -140,7 +131,17 @@
 					<tr><td><code>:%s/target/=@0/g</code> - replace target with what is yanked</td></tr>
 					<tr><td><code>:g/pattern/d</code> - delete all lines with pattern</td></tr>
 					<tr><td><code>:v/pattern/d</code> - delete all lines that do not match pattern</td></tr>
-					<tr><td><code></code> - </td></tr>
+
+					<tr><td><h1>Visual Mode</h1></td></tr>
+					<tr><td><code>v</code> - enter visual mode</td></tr>
+					<tr><td><code>V</code> - enter visual mode highlighting the current line</td></tr>
+					<tr><td><code>viw</code> - visually select word without spaces</td></tr>
+					<tr><td><code>vaw</code> - visually select work with trailing space</td></tr>
+					<tr><td><code>vi[</code> - visully select inside next occurence of [</td></tr>
+					<tr><td><code>gv</code> - reselect the last visual selection</td></tr>
+
+					<tr><td><h1>Moving Visually Selected Text</h1></td></tr>
+					<tr><td><code>:le 10</code> - takes the visually selected text and adds 10 spaces to the left of this selected text starting from beginning of line</td></tr>
 
 				</table>
 			</div> <!-- # end of second column -->
@@ -166,7 +167,7 @@
 					<tr><td><code>:reg[isters]</code> - list registers and their contents</td></tr>
 					<tr><td><code>]p</code> - paste line with right indent</td></tr>
 					<tr><td><code>:.!program</code> - replace line with program output
-				
+
 					<tr><td><h1>Split Windows</h1></td></tr>
 					<tr><td><code>:sp[lit] [file]</code> - split window horizontally opening [file]</td></tr>
 					<tr><td><code>:vs[plit] [file]</code> - split window vertically opening [file]</td></tr>
