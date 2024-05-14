@@ -65,7 +65,7 @@
 					<tr><td><code>s</code> - delete character under cursor and go into insert mode</td></tr>
 					<tr><td><code>x</code> or <code>X</code> - delete character under cursor or before cursor</td></tr>
 					<tr><td><code>c</code> or <code>#c</code> - change a character or change three characters <code>3c</code></td></tr>
-					<tr><td><code>cc</code> or <code>S</code> or <code>C</code> - change/replace whole line <code>cc/S</code> or change/replace to end of line<code>C</code></td></tr>
+					<tr><td><code>cc</code> or <code>S</code> or <code>#cc</code> or <code>C</code> - change/replace whole line <code>cc/S</code> or remove and change # lines starting from cursor or change/replace to end of line<code>C</code></td></tr>
 					<tr><td><code>ciw</code> - change word under cursor</td></tr>
 					<tr><td><code>caw</code> - change around word (including trailing space)</td></tr>
 					<tr><td><code>cw</code> - change word under cursor</td></tr>
@@ -95,9 +95,9 @@
 				<table>
 				 	<tr><h1>Moving Around</h1></tr>
 					<tr><td><code>h</code> or <code>#h</code> - Move one character to the the left or # characters to the left</td></tr>
-				 	<tr><td><code>j</code> - Move one line down</td></tr>
-				 	<tr><td><code>k</code> - Move one line up</td></tr>
-				 	<tr><td><code>l</code> - Move one character to the right</td></tr>
+					<tr><td><code>j</code> or <code>#j</code> - Move one line down or # lines down</td></tr>
+					<tr><td><code>k</code> or <code>#k</code> - Move one line up or # lines up</td></tr>
+					<tr><td><code>l</code> or <code>#l</code> - Move one character to the right or # characters to the right</td></tr>
 					<tr><td><code>ctrl-d</code> or <code>ctrl-u</code> - Move down 1/2 page or move up 1/2 page</td></tr>
 					<tr><td><code>ctrl-f</code> or <code>ctrl-b</code> - Move down full page or move up full page</td></tr>
 				 	<tr><td><code>H</code> or <code>M</code> or <code>L</code> - Move to top <code>H</code>, middle <code>M</code> or bottom of screen <code>L</code></td></tr>
@@ -109,7 +109,7 @@
 					<tr><td><code>``</code> - Jump between the last two changed positions in change list</td></tr>
 					<tr><td><code>#%</code> - Move to the # % of file. <code>25%</code> would move to the 25% percent of file</td></tr>
 				 	<tr><td><code>#|</code> - Move to # column in line</td></tr>
-				 	<tr><td><code>[Enter]/+</code> - Move to the next non-blank character on line</td></tr>
+					<tr><td><code>[Enter]</code> or <code>+</code> - Move to the next non-blank character on line</td></tr>
 					<tr><td><code>-</code> - move to the previous line at the first non-blank character</td></tr>
 					<tr><td><code>:#</code> - move to line # where # is a number.</td></tr>
 					<tr><td><code>%</code> - find matching ( ) or {</td></tr>
