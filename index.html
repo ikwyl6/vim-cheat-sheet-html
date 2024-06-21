@@ -82,11 +82,11 @@
 					<tr><td><code>:5,7m 21</code> - move lines 5-7 after line 21</td></tr>
 					<tr><td><code>[#]r[char]</code> - replace number of characters [#] with character [char]. <code>3rf</code></td></tr>
 					<tr><td><code>ddp</code> or <code>ddkP</code> - move line down or move line up</td></tr>
-					<tr><td><code>u</code> or <code>U</code> - undo last change or restore current line</td></tr>
+					<tr><td><code>u</code> or <code>U</code> - undo last change or restore (undo all changes to) current line</td></tr>
 					<tr><td><code>:undolist</code> - list your possible undo changes using <code>u</code></td></tr>
 					<tr><td><code>J</code> - join current and below line with space in between</td></tr>
-					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
 					<tr><td><code>gJ</code> - join current and below line with no space between</td></tr>
+					<tr><td><code>:78,83join</code> - join range of lines together</td></tr>
 				</table>
 			</div> <!-- #end of first column -->
 
@@ -103,7 +103,7 @@
 				 	<tr><td><code>H</code> or <code>M</code> or <code>L</code> - Move to top <code>H</code>, middle <code>M</code> or bottom of screen <code>L</code></td></tr>
 					<tr><td><code>w</code> or <code>W</code> - jump ahead to start of next <a href="https://vimhelp.org/motion.txt.html#word">word</a> or space-separated <a href="https://vimhelp.org/motion.txt.html#word">Word</a></td></tr>
 				 	<tr><td><code>e</code> or <code>E</code> - jump ahead to end of next word or space-separated word</td></tr>
-				 	<tr><td><code>b</code> or <code>B</code> - jump behind to start of previous word</td></tr>
+				 	<tr><td><code>b</code> or <code>B</code> - jump backward to start of previous word</td></tr>
 				 	<tr><td><code>gg</code> or <code>G</code> or <code>#G</code> - Jump to 1st line of file, last line of file, or #th-line of file</td></tr>
 					<tr><td><code>g;</code> or <code>g,</code> - Move back to previously / newer changed line (older/newer position in change list). Similar command as CTRL-O and CTRL-I (jump list)</td></tr>
 					<tr><td><code>``</code> - Jump between the last two changed positions in change list</td></tr>
@@ -123,7 +123,7 @@
 					<tr><td><code>zt</code> <code>zz</code> <code>zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
 
 					<tr><td><h1>Repeating Commands</h1></td></tr>
-					<tr><td><code>.</code> - Repeat last command performed</td></tr>
+					<tr><td><code>.</code> or <code>ctrl-r</code> or <code>#.</code> - Repeat last command performed or repeat last command # times</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
 
 					<tr><td><h1>Searching for text</h1></td></tr>
@@ -138,7 +138,7 @@
 					<tr><td><code>v</code> - enter visual mode</td></tr>
 					<tr><td><code>V</code> - enter visual mode highlighting the current line</td></tr>
 					<tr><td><code>viw</code> - visually select word without spaces</td></tr>
-					<tr><td><code>vaw</code> - visually select work with trailing space</td></tr>
+					<tr><td><code>vaw</code> - visually select word with trailing space</td></tr>
 					<tr><td><code>vi[</code> - visully select inside next occurence of [</td></tr>
 					<tr><td><code>gv</code> - reselect the last visual selection</td></tr>
 
@@ -159,7 +159,7 @@
 					<tr><td><code>:-10t.</code> - copy 10 lines above the current line and paste it below the current line</td></tr>
 					<tr><td><code>:10,20t.</code> - copy lines 10 to 20 and paste them below</td></tr>
 					<tr><td><code>:t20</code> - copy the current line and paste it below line 20</td></tr>
-					<tr><td><code>p</code> or <code>P</code> - paste before cursor and after cursor</td></tr>
+					<tr><td><code>p</code> or <code>P</code> - paste before cursor or after cursor</td></tr>
 					<tr><td><code>"ap</code> - paste from register <code>a</code></td></tr>
 					<tr><td><code>"+p</code> - paste from the system clipboard</td></tr>
 					<tr><td><code>".p</code> - paste from last inserted text</td></tr>
@@ -216,6 +216,7 @@
 					 <tr><td><a href="https://www.youtube.com/watch?v=rT-fbLFOCy0">I Read The Entire Neovim User Manual - TJ DeVries</a></td></tr>
 				</table>
 			</div>
+			<div><table></table></div><div><table></table></div>
 		</div> <!-- #container -->
 		<footer>Created by ikwyl6 on github with formatting inspiration from <a href="https://vim.rtorr.com/">vim.rtorr.com</a></footer>
 	</body>
