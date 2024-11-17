@@ -3,10 +3,11 @@
 	<head>
 		 <title>ikwyl6 vim cheat sheet</title>
 		 <style>
-			body { font-family: Arial; font-size: 14px; }
+			body { font-family: Arial; font-size: 16px; }
 			table { /*border:1px solid #999;*/ border-collapse: collapse; }
 			tr { /*border-bottom: 1px solid #999;*/ }
 			td { padding-top: 8px; padding-bottom: 8px; }
+			a { } /* Need to fix this instead of default blue */
 			h1 { font-size: }
 		  code { background: #eaeaea; /*#ddd;*/ border-radius:0; padding: 4px; font-weight: bold }
 			footer { font-size: 12px; font-color: #ddd }
@@ -23,6 +24,7 @@
 		</style>
 	</head>
 	<body>
+		 <h1 color="red"><b>ikwyl6 Vim Cheat Sheet</b></h1>
 		<div id="container">
 			 <div> <!-- # start of first column -->
 			 	<table>
@@ -49,8 +51,6 @@
 					<tr><td><code>:23,45w snippet.txt</code> - Write the contents of the lines numbered 23 through 45 to a new file named snippet.txt
 					<tr><td><code>:r file</code> - read file after line</td></tr>
 					<tr><td><code>:r !program</code> - read program output</td></tr>
-					<tr><td><code>:n</code> - edit next file in buffer</td></tr>
-					<tr><td><code>:p</code> - edit previous file in buffer</td></tr>
 					<tr><td><code>:f</code> or <code>^G</code> - show file name, total number of lines and percentage location within file</td></tr>
 					<tr><td><code>:q</code> or </code>:q!</code> - quit or quit without saving</td></tr>
 					<tr><td><code>:x</code> or <code>ZZ</code> - Save (if there are changes) and quit
@@ -60,7 +60,8 @@
 					<tr><td><code>i</code> or <code>I</code> - insert before cursor or before the first non-blank in the line</td></tr>
 					<tr><td><code>a</code> or <code>A</code> - append text after cursor or end of line</td></tr>
 					<tr><td><code>o</code> or <code>O</code> - enter insert mode but insert line after current one or before current line</td></tr>
-					<tr><td><code>rx</code> - replace single character with letter x</td></tr>
+					<tr><td><code>r[char]</code> - replace single character with letter [char]</td></tr>
+					<tr><td><code>[#]r[char]</code> - replace number of characters [#] with character [char]. Example: <code>3rf</code></td></tr>
 					<tr><td><code>R</code> - enter replace mode</td></tr>
 					<tr><td><code>s</code> - delete character under cursor and go into insert mode</td></tr>
 					<tr><td><code>x</code> or <code>X</code> - delete character under cursor or before cursor</td></tr>
@@ -80,7 +81,6 @@
 					<tr><td><code>:5,25d</code> - delete lines 5-25
 					<tr><td><code>:.m 12</code> - move current line after line 12</td></tr>
 					<tr><td><code>:5,7m 21</code> - move lines 5-7 after line 21</td></tr>
-					<tr><td><code>[#]r[char]</code> - replace number of characters [#] with character [char]. <code>3rf</code></td></tr>
 					<tr><td><code>ddp</code> or <code>ddkP</code> - move line down or move line up</td></tr>
 					<tr><td><code>u</code> or <code>U</code> - undo last change or restore (undo all changes to) current line</td></tr>
 					<tr><td><code>:undolist</code> - list your possible undo changes using <code>u</code></td></tr>
@@ -104,7 +104,7 @@
 					<tr><td><code>w</code> or <code>W</code> - jump ahead to start of next <a href="https://vimhelp.org/motion.txt.html#word">word</a> or space-separated <a href="https://vimhelp.org/motion.txt.html#word">Word</a></td></tr>
 				 	<tr><td><code>e</code> or <code>E</code> - jump ahead to end of next word or space-separated word</td></tr>
 				 	<tr><td><code>b</code> or <code>B</code> - jump backward to start of previous word</td></tr>
-				 	<tr><td><code>gg</code> or <code>G</code> or <code>#G</code> - Jump to 1st line of file, last line of file, or #th-line of file</td></tr>
+					<tr><td><code>gg</code> or <code>[[</code> or <code>G</code> or <code>]]</code> or <code>#G</code> - Jump to 1st line of file <code>gg or [[</code>, last line of file <code>G or ]]</code>, or #th-line of file</td></tr>
 					<tr><td><code>g;</code> or <code>g,</code> - Move back to previously / newer changed line (older/newer position in change list). Similar command as CTRL-O and CTRL-I (jump list)</td></tr>
 					<tr><td><code>``</code> - Jump between the last two changed positions in change list</td></tr>
 					<tr><td><code>#%</code> - Move to the # % of file. <code>25%</code> would move to the 25% percent of file</td></tr>
@@ -131,8 +131,9 @@
 					<tr><td><code>:/search/y</code> - search and yank the text that was found</td></tr>
 					<tr><td><code>:/search1/,/search2/d</code> - search and delete lines with multiple patterns</td></tr>
 					<tr><td><code>:%s/target/=@0/g</code> - replace target with what is yanked</td></tr>
+					<tr><td><code>:%s/search/replace/g</code> - search and replace over whole file (%)</td></tr>
 					<tr><td><code>:g/pattern/d</code> - delete all lines with pattern</td></tr>
-					<tr><td><code>:v/pattern/d</code> - delete all lines that do not match pattern</td></tr>
+					<tr><td><code>:v/pattern/d</code> - delete all lines that <i>do not</i> match pattern</td></tr>
 
 					<tr><td><h1>Visual Mode</h1></td></tr>
 					<tr><td><code>v</code> - enter visual mode</td></tr>
@@ -178,32 +179,38 @@
 
 					<tr><td><h1>Folds</h1></td></tr>
 					<tr><td><code>zf</code> - create fold at cursor position</td></tr>
-					<tr><td><code>zf{motion} {Visual}zf</code> - create a fold</td></tr>
+					<tr><td><code>zf{motion}</code> OR <code>{Visual}zf</code> - create a fold. Example: <code>zf#j</code> - create a folder from cursor down # lines. <code>zfgg</code> - create fold from cursor to top of file. <code>zfG</code> - create fold from cursor to bottom of file</td></tr>
 					<tr><td><code>zf/string</code> - create a fold from the cursor position to the first instance of the search string</td></tr>
+					<tr><td><code>zj</code> or <code>zk</code> - move downwards or upwards</td></tr>
 					<tr><td><code>zd</code> or <code>zD</code> - delete fold marker under cursor (or recursively zD)</td></tr>
 					<tr><td><code>za</code> - toggle fold at cursor location</td></tr>
 					<tr><td><code>zF</code> - create a fold for [count] lines</td></tr>
 					<tr><td><code>:{range}fo[ld]</code> -	create a fold for {range}</td></tr>
-					<tr><td><code>zE</code> -	eliminate all folds in the window.</td></tr>
-					<tr><td><code>zo</code> or <code>zO</code> - open fold recursively or not</td></tr>
-					<tr><td><code>zc</code> or <code>zC</code> - close one fold under the cursor recursively or not</td></tr>
-					<tr><td><code>za</code> or <code>zA</code> - open or close recursively or not</td></tr>
+					<tr><td><code>zo</code> or <code>zO</code> - open fold (zO) recursively</td></tr>
+					<tr><td><code>zc</code> or <code>zC</code> - close one fold under the cursor recursively</td></tr>
+					<tr><td><code>za</code> or <code>zA</code> - open or close a fold recursively (zA)</td></tr>
 					<tr><td><code>zv</code> -	view cursor line</td></tr>
-					<tr><td><code>zm</code> or <code>zM</code> - fold more: Subtract one from 'foldlevel'</td></tr>
-					<tr><td><code>zr</code> or <code>zR</code> - reduce folding: Add one to 'foldlevel'</td></tr>
+					<tr><td><code>zm</code> or <code>zM</code> - increase folding: Subtract one from 'foldlevel'</td></tr>
+					<tr><td><code>zr</code> or <code>zR</code> - reduce folding: Add one to 'foldlevel'. zR Decreases foldlevel to zero and opens all folds</td></tr>
+					<tr><td><code>zE</code> -	delete all folds</td></tr>
 					<tr><td><code>:{range}foldo[pen][!]</code> - open folds in {range}. [!] all folds are</td></tr>
 					<tr><td><code>:{range}foldc[lose][!]</code> -	close folds in {range}. [!] all folds</td></tr>
 					<tr><td><code>zn</code> or <code>zN</code> - all folds will be open</td></tr>
 					<tr><td><code>zi</code> -	invert 'foldenable'</td></tr>
 					<tr><td><code>[z</code> or <code>]z</code> - move to the start or the end of the current open fold</td></tr>
-					<tr><td><code>zj</code> or <code>zk</code> - move downwards or upwards</td></tr>
 
 					<tr><td><h1>Tabs</h1></td></tr>
-					<tr><td><code>:tabnew</code> - Create a new tab</td></tr>
+					<tr><td><code>$ vim file1 file2 ... -p</code> - Open each file in a tab</td></tr>
+					<tr><td><code>:argdo tabe</code> - Open all files in their own tab</td></tr>
+					<tr><td><code>:tabnew [file]</code> or <code>:tabe[dit] [file]</code> - Create a new tab [with file]</td></tr>
 					<tr><td><code>:tabc[lose]</code>- Close current tab</td></tr>
 					<tr><td><code>:tab help tabs</code> - create new help window about tabs in a new tab</td></tr>
 					<tr><td><code>Ctrl-Shift-[Up/Dn]</code>Rotate between tabs</td></tr>
 					<tr><td><code>Ctrl-w T</code>Move window to a new tab</td></tr>
+					<tr><td><code>:args</code> - Print the argument list</td></tr>
+					<tr><td><code>:ls</code> - List buffers</td></tr>
+					<tr><td><code>:n</code> - edit next file in buffer</td></tr>
+					<tr><td><code>:p</code> - edit previous file in buffer</td></tr>
 				</table>
 			</div> <!-- # end of third column -->
 
