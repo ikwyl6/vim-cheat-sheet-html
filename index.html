@@ -122,11 +122,21 @@
 					<tr><td><code>,</code> or <code>;</code> - using <code>f</code> or <code>t</code> commands above, repeat in the command direction or previous direction</td></tr>
 					<tr><td><code>zt</code> <code>zz</code> <code>zb</code> - orient screen so line is at (top|center|bottom) of screen</td></tr>
 
+					<tr><td><h1>Marks</h1></td></tr>
+					<tr><td><code>:marks</code> - list all marks in current file and all files. Text in blue will be marks for current buffer</td></tr>
+					<tr><td><code>ma</code> - create mark 'a' at current cursor location</td></tr>
+					<tr><td><code>'a</code> - jump to line of mark 'a' (first non-blank character of line)</td></tr>
+					<tr><td><code>`a</code> - jump to position, line, and column of mark 'a'</td></tr>
+					<tr><td><code>d'a</code> - delete from current line to line of mark 'a'</td></tr>
+					<tr><td><code>d`a</code> - delete from current current position to position of mark 'a'</td></tr>
+					<tr><td><code>''</code> - jump back to line in current buffer where last jumped from</td></tr>
+
 					<tr><td><h1>Repeating Commands</h1></td></tr>
 					<tr><td><code>.</code> or <code>ctrl-r</code> or <code>#.</code> - Repeat last command performed or repeat last command # times</td></tr>
 					<tr><td><code>#{command}</code> - Repeat command # times</td></tr>
 
 					<tr><td><h1>Searching for text</h1></td></tr>
+					<tr><td><code>:/search</code> - search for 'search'</td></tr>
 					<tr><td><code>:/search/d</code> - search and delete the text that was found</td></tr>
 					<tr><td><code>:/search/y</code> - search and yank the text that was found</td></tr>
 					<tr><td><code>:/search1/,/search2/d</code> - search and delete lines with multiple patterns</td></tr>
@@ -155,6 +165,8 @@
 					<tr><td><code>yy</code> or <code>Y</code> - Copy/Yank current line</td></tr>
 					<tr><td><code>5yy</code> - Copy/Yank current line and 5 lines below it</td></tr>
 					<tr><td><code>y$</code> - Copy/yank from current cursor to end of line</td></tr>
+					<tr><td><code>y^</code> - Copy/yank from current cursor to start of line</td></tr>
+					<tr><td><code>yw</code> - Copy/yank to the start of the next work</td></tr>
 					<tr><td><code>:#y</code> - copy/yank line number #</td></tr>
 					<tr><td><code>:#copy</code> or <code>:#t.</code> - copies the line specified and pastes it to the line below</td></tr>
 					<tr><td><code>:-10t.</code> - copy 10 lines above the current line and paste it below the current line</td></tr>
