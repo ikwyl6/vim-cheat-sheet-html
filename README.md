@@ -1,3 +1,5 @@
+#### NOTE: This repository is archived and moved to: https://codeberg.org/ikwyl6/vim-cheat-sheet-html
+
 # vim-cheat-sheet-html
 
 Collaboration of [vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) [cheat sheets](https://en.wikipedia.org/wiki/Cheat_sheet) I've found and put them in a [html](https://en.wikipedia.org/wiki/.html) file
